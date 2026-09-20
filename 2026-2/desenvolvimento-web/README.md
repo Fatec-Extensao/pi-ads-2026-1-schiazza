@@ -1,4 +1,4 @@
-# `2026-2/desenvolvimento-web/README.md`
+`2026-2/desenvolvimento-web/README.md`
 
 # Desenvolvimento Web
 
@@ -30,18 +30,18 @@ desenvolvimento-web/
 
 ---
 
-# `2026-2/engenharia-software/README.md`
+`2026-2/engenharia-software/README.md`
 
-# Engenharia de Software II
+## Engenharia de Software II
 
 **Disciplina:** Engenharia de Software II
 **Professor:** Prof. Rafael Hamamura
 
-## Objetivo
+### Objetivo
 
 Este diretório concentra a documentação referente à análise, especificação e modelagem do sistema.
 
-## Conteúdo Previsto
+### Conteúdo Previsto
 
 * levantamento de requisitos;
 * requisitos funcionais;
@@ -50,7 +50,7 @@ Este diretório concentra a documentação referente à análise, especificaçã
 * diagramas UML;
 * documentação técnica de modelagem.
 
-## Estrutura Sugerida
+### Estrutura Sugerida
 
 ```text
 engenharia-software/

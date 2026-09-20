@@ -24,11 +24,11 @@ Projeto Integrador ADS II — 30 horas
 
 ## Integrantes do Grupo
 
-| Aluno                | GitHub                                         |
-| -------------------- | ---------------------------------------------- |
-| Luís Miguel Schiazza | [@SEU-USUARIO](https://github.com/luismschiazza) |
-|Igor Rodrigues dos Santos | [@usuario2](https://github.com/IgorRDS)       |
-| Matheus Cardoso de Oliveira Bispo | [@usuario3](https://github.com/matheusxd2)
+| Aluno                              | GitHub                                           |
+| ---------------------------------- | ------------------------------------------------ |
+| Luís Miguel Schiazza               | [@SEU-USUARIO](https://github.com/luismschiazza) |
+| Igor Rodrigues dos Santos          | [@usuario2](https://github.com/IgorRDS)          |
+| Matheus Cardoso de Oliveira Bispo  | [@usuario3](https://github.com/matheusxd2)       |
 
 ---
 
