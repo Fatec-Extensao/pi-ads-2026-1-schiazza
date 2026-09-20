@@ -1,9 +1,6 @@
-`2026-2/banco-de-dados/README.md`
-
 # Banco de Dados I
 
-**Disciplina:** Banco de Dados I
-
+**Disciplina:** Banco de Dados I  
 **Professor:** Prof. Luiz Fernando de Oliveira Silva
 
 ## Objetivo
@@ -16,9 +13,9 @@ Este diretório contém os artefatos relacionados à análise, modelagem e imple
 - Diagrama Entidade-Relacionamento — DER;
 - Modelo Lógico;
 - Modelo Físico;
-- scripts SQL;
-- dados utilizados para testes;
-- consultas utilizadas pelo sistema.
+- Scripts SQL;
+- Dados utilizados para testes;
+- Consultas utilizadas pelo sistema.
 
 ## Arquivos Principais
 
@@ -26,22 +23,22 @@ Este diretório contém os artefatos relacionados à análise, modelagem e imple
 
 Responsável pela definição da estrutura do banco de dados, incluindo:
 
-- tabelas;
-- atributos;
-- chaves primárias;
-- chaves estrangeiras;
-- restrições;
-- relacionamentos.
+- Tabelas;
+- Atributos;
+- Chaves primárias;
+- Chaves estrangeiras;
+- Restrições;
+- Relacionamentos.
 
 ### `queries.sql`
 
 Arquivo destinado às operações e consultas SQL, incluindo:
 
-- inserção de dados;
-- consultas;
-- atualizações;
-- exclusões;
-- consultas analíticas.
+- Inserção de dados;
+- Consultas;
+- Atualizações;
+- Exclusões;
+- Consultas analíticas.
 
 ## Estrutura Sugerida
 
