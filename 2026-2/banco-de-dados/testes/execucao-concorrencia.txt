@@ -1,0 +1,34 @@
+INSERT 0 1
+INSERT 0 1
+
+
+Codigo : 0
+Saida  : BEGIN
+          finalizar_questionario
+         ------------------------
+
+         (1 row)
+
+          pg_sleep
+         ----------
+
+         (1 row)
+
+         COMMIT
+
+
+Codigo : 1
+Saida  : BEGIN
+         psql.exe : ERROR:  Token inválido ou consumido
+         No linha:4 caractere:7
+         +  $out=& psql @a -c "BEGIN; SELECT finalizar_questionario(repeat('f',6 ...
+         +       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+             + CategoryInfo          : NotSpecified: (ERROR:  Token inválido ou consumido:String) [], RemoteException
+             + FullyQualifiedErrorId : NativeCommandError
+
+         CONTEXT:  PL/pgSQL function finalizar_questionario(text,jsonb) line 5 at RAISE
+
+
+
+
+PASSOU: duas sessões disputaram o mesmo token; uma conclusão, uma rejeição, sem duplicação.
