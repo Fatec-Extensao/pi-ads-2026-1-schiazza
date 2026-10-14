@@ -29,6 +29,8 @@ O administrador cria pesquisas, questões e alternativas, controla convites e en
 
 Zero questões/opções é permitido durante a elaboração. Antes da abertura, o backend valida que há questões e alternativas suficientes. Nesta proposta, um participante recebe uma categoria em cada pesquisa, as questões são fechadas e todas são obrigatórias, com escolha única. Outros tipos exigem evolução do modelo; esta é uma delimitação técnica para revisão, não um requisito extraído das issues.
 
+Uma categoria por participação e questões fechadas obrigatórias de escolha única delimitam apenas a versão acadêmica inicial. Múltiplas categorias e outros tipos de questão dependem de aprovação e não são regras definitivas do produto.
+
 Não existe relacionamento entre PARTICIPACAO/TOKEN_ACESSO/USUARIO e RESPOSTA_ANONIMA. A finalização consome o token, marca a participação e insere resposta e itens atomicamente, sem retornar o UUID da resposta. O vínculo por categoria exige mitigação de identificação indireta.
 
 `gerar-diagrama.ps1` é a fonte editável e reproduz o PNG e o SVG. O SVG também pode ser editado em ferramenta vetorial. As caixas contêm atributos conceituais; chaves físicas e validações estão no modelo lógico.

@@ -64,7 +64,8 @@ CREATE TABLE item_resposta (
  PRIMARY KEY (resposta_id, questao_id)
 );
 -- Contexto é derivado da resposta para evitar dependência transitiva no item (3FN).
-CREATE FUNCTION validar_item() RETURNS trigger LANGUAGE plpgsql AS $$
+CREATE FUNCTION validar_item() RETURNS trigger LANGUAGE plpgsql
+SET search_path = pg_catalog, public, pg_temp AS $$
 BEGIN
  PERFORM 1 FROM resposta_anonima r JOIN opcao o
  ON (o.pesquisa_id,o.categoria_id)=(r.pesquisa_id,r.categoria_id)
@@ -87,11 +88,13 @@ FOR EACH ROW EXECUTE FUNCTION impedir_alteracao();
 CREATE FUNCTION proteger_participacao() RETURNS trigger LANGUAGE plpgsql AS $$
 BEGIN
  IF OLD.concluida THEN RAISE EXCEPTION 'Participação concluída é imutável'; END IF;
+ IF TG_OP = 'DELETE' THEN RETURN OLD; END IF;
  RETURN NEW;
 END $$;
 CREATE TRIGGER participacao_concluida BEFORE UPDATE OR DELETE ON participacao
 FOR EACH ROW EXECUTE FUNCTION proteger_participacao();
-CREATE FUNCTION validar_token() RETURNS trigger LANGUAGE plpgsql AS $$
+CREATE FUNCTION validar_token() RETURNS trigger LANGUAGE plpgsql
+SET search_path = pg_catalog, public, pg_temp AS $$
 DECLARE feita boolean;
 BEGIN
  SELECT concluida INTO feita FROM participacao
@@ -104,7 +107,8 @@ FOR EACH ROW EXECUTE FUNCTION validar_token();
 -- Contrato acadêmico: questões fechadas, uma opção por questão, todas obrigatórias.
 -- Não retorna identificador de resposta ao chamador.
 CREATE FUNCTION finalizar_questionario(p_hash text, p_itens jsonb)
-RETURNS void LANGUAGE plpgsql AS $$
+RETURNS void LANGUAGE plpgsql
+SET search_path = pg_catalog, public, pg_temp AS $$
 DECLARE t token_acesso%ROWTYPE; p participacao%ROWTYPE; r uuid;
 BEGIN
  SELECT * INTO t FROM token_acesso WHERE token_hash = p_hash FOR UPDATE;

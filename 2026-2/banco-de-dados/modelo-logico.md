@@ -26,9 +26,13 @@ IDs de categoria, questão e opção são locais ao respectivo pai, atribuídos 
 
 ## Finalização e limites
 
+Nesta versão acadêmica inicial, cada participação recebe exatamente uma categoria. Múltiplas categorias dependem de aprovação futura. As questões fechadas, obrigatórias e de escolha única são uma limitação da versão, não uma regra definitiva do produto.
+
 `finalizar_questionario(hash, itens)` bloqueia token e participação; exige exatamente um item válido por questão; cria UUID aleatório; grava itens; marca participação concluída e exclui token. Tudo ocorre na transação do chamador: qualquer falha desfaz a chamada. PK dos itens rejeita questões repetidas; gatilho rejeita alternativas de contexto diferente; PK da participação impede inscrição repetida. O mesmo usuário pode participar de outras pesquisas. Participações concluídas não podem ser alteradas ou excluídas, nem receber novos tokens.
 
 O backend deve autenticar o usuário e associá-lo ao token antes da chamada, gerar senhas fortes e tokens criptograficamente aleatórios, armazenar hash de senha adequado (ex.: Argon2id) e SHA-256 do token de alta entropia, controlar papéis, congelar o questionário após a abertura, gerir convites e impedir gravações diretas nas tabelas anônimas. A função é SECURITY INVOKER: esta entrega **não implementa** o serviço, a política GRANT/roles nem uma fronteira de segurança contra SQL arbitrário. O acesso a escrita deve ficar em serviço confiável, sem credenciais de banco no navegador. SQL direto privilegiado pode inserir respostas sem consumir tokens; portanto a correspondência entre total de participações e respostas exige o fluxo transacional documentado. Não são implementados edição de pesquisas publicadas nem expurgo administrativo; precisam de projeto próprio.
+
+As funções que consultam/gravam dados fixam `search_path = pg_catalog, public, pg_temp`: tabelas temporárias homônimas não podem desviar as operações. O schema `public` deve permanecer sem permissão CREATE para papéis não confiáveis; a proteção não substitui a política de permissões do backend. A exclusão de participação pendente retorna OLD no gatilho e segue sujeita às FKs; participação concluída permanece imutável. Como gatilhos de linha não protegem contra TRUNCATE nem contra sua desativação por proprietários, esses poderes também não devem ser concedidos a clientes.
 
 ## Anonimato
 

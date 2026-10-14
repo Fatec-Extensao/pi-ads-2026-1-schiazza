@@ -52,7 +52,7 @@ O gerador usa UTF-8 com BOM por compatibilidade com PowerShell 5.1. Fonte e SVG 
 
 ## Comparação com os checklists originais
 
-Itens conferidos contra o corpo integral das issues. “Atendido” descreve artefatos e testes desta branch, sujeitos à revisão acadêmica; não modifica checkboxes no GitHub nem encerra issues.
+Itens conferidos contra o corpo integral das issues. “Atendido” descreve os artefatos e testes entregues, sujeitos à avaliação acadêmica. O estado administrativo das issues deve ser consultado no GitHub; esta tabela registra a cobertura dos critérios.
 
 | Issue | Requisito original | Situação e evidência |
 | --- | --- | --- |
@@ -88,7 +88,7 @@ Itens conferidos contra o corpo integral das issues. “Atendido” descreve art
 ## Pendências de decisão e integração
 
 - Validade dos tokens e mecanismo de entrega de resultados: não definidos nem presumidos.
-- Validar a proposta de categoria única por participação e questões fechadas, obrigatórias e de escolha única.
+- Uma categoria por participação e questões fechadas, obrigatórias e de escolha única delimitam a versão acadêmica inicial, sem constituir regras definitivas do produto. Múltiplas categorias e outros tipos dependem de aprovação futura.
 - Definir limiar de publicação para categorias pequenas, supressão complementar e retenção de logs/backups.
 - Implementar no backend autenticação, autorização, geração/entrega de credenciais, congelamento do questionário e acesso exclusivo pelo fluxo transacional. A política de permissões do serviço está pendente.
 

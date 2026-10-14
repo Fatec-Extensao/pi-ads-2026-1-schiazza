@@ -2,6 +2,17 @@
 
 Ambiente: Windows, PostgreSQL **18.6**, servidor descartável em 127.0.0.1:55456, usuário pi_test. O banco existente na porta 5432 não foi utilizado. Versão obtida por `SELECT version()`. psql executado com `-X -v ON_ERROR_STOP=1`; saídas anexas geradas em banco novo na ordem do README, somente com dados fictícios.
 
+## Revisão técnica final do PR #15
+
+Nesta revisão, os testes foram executados novamente em banco descartável, com versão, nome do banco e horário registrados na saída SQL. Não foram reutilizados resultados da execução inicial. Os checklists originais das issues #4, #5 e #6 foram relidos e confrontados com os artefatos; todos os critérios de entrega estão cobertos pela tabela do README.
+
+Duas falhas foram reproduzidas antes das correções:
+
+- DELETE de participação pendente retornava `DELETE 0`: em gatilho BEFORE DELETE, retornar NEW (NULL nessa operação) cancelava a exclusão. O teste de regressão falhou com `DELETE deve remover participação ainda não concluída`. Corrigido para retornar OLD, mantendo bloqueio de participações concluídas e integridade pelas FKs.
+- Sem search_path fixo, tabelas temporárias homônimas desviavam a finalização: a reprodução manteve quatro respostas públicas, criou uma resposta temporária, concluiu a participação e consumiu o token. Corrigido fixando pg_catalog, public, pg_temp nas três funções que acessam dados. A regressão exige gravação nas tabelas públicas, tabelas temporárias vazias e rejeição de novo token para participação concluída mesmo com participação temporária falsa.
+
+As regressões passaram após as correções. O teste também verifica no catálogo nove PKs, dez FKs, três UNIQUE e oito CHECK, categoria única por pesquisa/usuário mesmo ao tentar outra categoria, categoria fora da pesquisa, formato do token, token ativo duplicado, JSON inválido e preservação da carga após o ROLLBACK externo. A 3FN foi revisada pelas dependências funcionais documentadas; não é uma propriedade que um teste de execução sozinho demonstre.
+
 | Verificação | Resultado observado |
 | --- | --- |
 | schema.sql | Transação concluída; nove tabelas e funções/gatilhos criados |
@@ -18,6 +29,8 @@ Ambiente: Windows, PostgreSQL **18.6**, servidor descartável em 127.0.0.1:55456
 | Reuso de token | Rejeitado após consumo |
 | Reabrir/excluir participação concluída | Rejeitado por gatilho |
 | Emitir token após conclusão | Rejeitado por gatilho |
+| Excluir participação pendente | Uma linha excluída; participação concluída continua protegida |
+| Tabelas temporárias homônimas | Não desviam respostas/itens nem permitem emissão para participação concluída |
 | Excluir opção | Rejeitado por imutabilidade |
 | Anonimato estrutural | Sem usuario_id, token_hash, participacao_id, created_at ou ip em respostas/itens |
 | Concorrência | Duas sessões: um sucesso, uma rejeição; totais finais: 5 respostas, 7 itens, zero tokens |
