@@ -1,0 +1,88 @@
+@startuml
+skinparam shadowing false
+skinparam backgroundColor white
+skinparam defaultFontName Arial
+skinparam roundcorner 0
+skinparam ArrowColor Black
+skinparam classBackgroundColor #FFFFCC
+skinparam classBorderColor Black
+skinparam usecaseBackgroundColor White
+skinparam usecaseBorderColor Black
+skinparam actorBorderColor Black
+skinparam actorFontColor Black
+skinparam sequenceParticipantBackgroundColor #FFFFCC
+skinparam sequenceParticipantBorderColor Black
+skinparam sequenceLifeLineBorderColor Black
+title UC05–UC07 — responder e concluir questionário
+actor Respondente as R
+boundary "Interface web\n(prevista)" as UI
+control "Serviço de aplicação\n(previsto)" as S
+database "PostgreSQL\n(DDL do PR #15)" as DB
+note over UI,S
+ Interações propostas; backend não implementado.
+ Sem credenciais SQL no navegador.
+end note
+R -> UI : informar credenciais e token
+UI -> S : solicitar acesso à pesquisa
+S -> S : autenticar e autorizar usuário
+S -> DB : consultar vínculo do hash e participação
+DB --> S : contexto de acesso, sem respostas individuais
+alt credenciais, vínculo ou participação inválidos
+ S --> UI : negar acesso
+ UI --> R : informar falha sem dados de terceiros
+else acesso permitido
+ S -> DB : carregar questões/opções da categoria
+ DB --> S : questionário
+ S --> UI : apresentar questionário autorizado
+ loop para cada questão obrigatória
+  R -> UI : escolher uma alternativa
+ end
+ R -> UI : revisar e confirmar envio
+ UI -> S : submeter token e itens
+ S -> S : revalidar identidade/vínculo, formato e contexto
+ alt acesso ou formato rejeitado pelo serviço
+  S --> UI : erro; nenhuma gravação definitiva
+  UI --> R : corrigir ou autenticar novamente
+ else submissão autorizada
+  S -> DB : BEGIN
+  S -> DB : finalizar_questionario(hash, itens)
+  DB -> DB : bloquear token e participação (FOR UPDATE)
+  DB -> DB : verificar token, conclusão e completude
+  alt token inválido/consumido, participação concluída ou incompleto
+   DB --> S : exceção
+   S -> DB : ROLLBACK
+   S --> UI : rejeitar tentativa sem nova resposta
+  else token, participação e completude válidos
+   DB -> DB : criar resposta UUID e inserir itens
+   DB -> DB : validar contexto e unicidade dos itens
+   alt questão repetida ou opção inválida
+    DB --> S : exceção; chamada sem efeitos parciais
+    S -> DB : ROLLBACK
+    S --> UI : erro; token ativo preservado
+   else todos os itens válidos
+    DB -> DB : marcar participação concluída
+    DB -> DB : DELETE token_acesso (consumo e desvinculação)
+    DB --> S : void (sem UUID de resposta)
+    S -> DB : COMMIT
+    alt commit confirmado
+     DB --> S : confirmação
+     S --> UI : sucesso sem identificador da resposta
+     UI --> R : participação concluída
+    else falha ou conexão perdida
+     S --> UI : conclusão não confirmada
+     note over S,DB
+      Falha anterior ao commit: rollback.
+      Resultado incerto: reconectar e consultar
+      participação autenticada antes de repetir.
+     end note
+    end
+   end
+  end
+ end
+end
+note over S,DB
+ Transação só confirmada após COMMIT do chamador.
+ Concorrência: bloqueio serializa token; perdedora é rejeitada.
+ Não persistir vínculo identidade–UUID em logs.
+end note
+@enduml

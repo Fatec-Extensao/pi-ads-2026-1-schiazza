@@ -1,0 +1,83 @@
+@startuml
+skinparam shadowing false
+skinparam backgroundColor white
+skinparam defaultFontName Arial
+skinparam roundcorner 0
+skinparam ArrowColor Black
+skinparam classBackgroundColor #FFFFCC
+skinparam classBorderColor Black
+skinparam usecaseBackgroundColor White
+skinparam usecaseBorderColor Black
+skinparam actorBorderColor Black
+skinparam actorFontColor Black
+skinparam sequenceParticipantBackgroundColor #FFFFCC
+skinparam sequenceParticipantBorderColor Black
+skinparam sequenceLifeLineBorderColor Black
+hide circle
+hide empty methods
+title Modelo conceitual — nove classes do domínio
+class "Usuário" as Usuario {
+ identificador
+ nome
+ email
+ hashSenha
+}
+class Pesquisa {
+ identificador
+ titulo
+}
+class Categoria {
+ identificadorLocal
+ nome
+}
+class "Questão" as Questao {
+ identificadorLocal
+ enunciado
+}
+class "Opção" as Opcao {
+ identificadorLocal
+ descricao
+}
+class "Participação" as Participacao {
+ concluida : Boolean
+}
+class TokenAcesso {
+ hashToken
+}
+class "RespostaAnônima" as Resposta {
+ identificadorAleatorio : UUID
+}
+class ItemResposta
+Usuario "1" -- "0..*" Pesquisa : administra >
+Usuario "1" -- "0..*" Pesquisa : possui >
+Pesquisa "1" -- "0..*" Categoria : contém >
+Categoria "1" -- "0..*" Questao : define >
+Questao "1" -- "0..*" Opcao : oferece >
+Usuario "1" -- "0..*" Participacao : recebe >
+Pesquisa "1" -- "0..*" Participacao : controla >
+Categoria "1" -- "0..*" Participacao : classifica >
+Participacao "1" -- "0..1" TokenAcesso : autoriza >
+Categoria "1" -- "0..*" Resposta : agrupa >
+Resposta "1" -- "1..*" ItemResposta : contém >
+Opcao "1" -- "0..*" ItemResposta : selecionada em >
+note left of Participacao
+ {única por usuário/pesquisa}
+ Categoria pertence à mesma pesquisa.
+ Concluída: imutável e sem token ativo.
+end note
+note bottom of Resposta
+ Nenhuma associação com Usuário,
+ Participação ou TokenAcesso.
+ Pesquisa derivada da categoria.
+ Sem IP, horário ou identidade.
+end note
+note bottom of ItemResposta
+ Uma opção por questão do contexto.
+ 1..* itens no agregado finalizado;
+ completude garantida pelo fluxo da função.
+end note
+note top of Categoria
+ Questionário = questões da categoria.
+ IDs locais; 0..* durante elaboração.
+end note
+@enduml
