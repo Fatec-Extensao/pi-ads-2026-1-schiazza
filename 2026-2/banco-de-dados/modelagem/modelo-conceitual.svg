@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1500" viewBox="0 0 1900 1500"><rect width="1900" height="1500" fill="white"/>
+<text x='70' y='53' font-family='Arial' font-size='34'>MER / DER — Sistema Web para Gestão de Pesquisas por Questionários</text>
+<text x='70' y='108' font-family='Arial' font-size='23'>Cardinalidades: cada filho pertence a 1 pai; rótulos indicam filhos por pai.</text>
+<rect x='70' y='170' width='470' height='150' fill='#f0f8ff' stroke='#375573' stroke-width='2'/>
+<text x='85' y='208' font-family='Arial' font-size='34'>USUARIO</text>
+<text x='85' y='258' font-family='Arial' font-size='23'>identificador, nome, email</text>
+<text x='85' y='288' font-family='Arial' font-size='23'>hash da senha</text>
+<rect x='710' y='170' width='470' height='150' fill='#f0f8ff' stroke='#375573' stroke-width='2'/>
+<text x='725' y='208' font-family='Arial' font-size='34'>PESQUISA</text>
+<text x='725' y='258' font-family='Arial' font-size='23'>identificador, título</text>
+<text x='725' y='288' font-family='Arial' font-size='23'>administra / possui: papéis do usuário</text>
+<rect x='1350' y='170' width='470' height='150' fill='#f0f8ff' stroke='#375573' stroke-width='2'/>
+<text x='1365' y='208' font-family='Arial' font-size='34'>CATEGORIA</text>
+<text x='1365' y='258' font-family='Arial' font-size='23'>identificador local, nome</text>
+<text x='1365' y='288' font-family='Arial' font-size='23'>pertence à pesquisa</text>
+<rect x='70' y='570' width='470' height='150' fill='#f0f8ff' stroke='#375573' stroke-width='2'/>
+<text x='85' y='608' font-family='Arial' font-size='34'>PARTICIPACAO</text>
+<text x='85' y='658' font-family='Arial' font-size='23'>usuário + pesquisa (únicos)</text>
+<text x='85' y='688' font-family='Arial' font-size='23'>categoria, concluída</text>
+<rect x='710' y='570' width='470' height='150' fill='#f0f8ff' stroke='#375573' stroke-width='2'/>
+<text x='725' y='608' font-family='Arial' font-size='34'>TOKEN_ACESSO</text>
+<text x='725' y='658' font-family='Arial' font-size='23'>hash do token ativo</text>
+<text x='725' y='688' font-family='Arial' font-size='23'>vínculo removido ao concluir</text>
+<rect x='1350' y='570' width='470' height='150' fill='#f0f8ff' stroke='#375573' stroke-width='2'/>
+<text x='1365' y='608' font-family='Arial' font-size='34'>QUESTAO</text>
+<text x='1365' y='658' font-family='Arial' font-size='23'>identificador local, enunciado</text>
+<text x='1365' y='688' font-family='Arial' font-size='23'>uma categoria por questão</text>
+<rect x='70' y='1000' width='470' height='150' fill='#f0f8ff' stroke='#375573' stroke-width='2'/>
+<text x='85' y='1038' font-family='Arial' font-size='34'>RESPOSTA_ANONIMA</text>
+<text x='85' y='1088' font-family='Arial' font-size='23'>identificador aleatório</text>
+<text x='85' y='1118' font-family='Arial' font-size='23'>contexto: pesquisa e categoria</text>
+<rect x='710' y='1000' width='470' height='150' fill='#f0f8ff' stroke='#375573' stroke-width='2'/>
+<text x='725' y='1038' font-family='Arial' font-size='34'>ITEM_RESPOSTA</text>
+<text x='725' y='1088' font-family='Arial' font-size='23'>questão respondida</text>
+<text x='725' y='1118' font-family='Arial' font-size='23'>opção selecionada</text>
+<rect x='1350' y='1000' width='470' height='150' fill='#f0f8ff' stroke='#375573' stroke-width='2'/>
+<text x='1365' y='1038' font-family='Arial' font-size='34'>OPCAO</text>
+<text x='1365' y='1088' font-family='Arial' font-size='23'>identificador local, descrição</text>
+<text x='1365' y='1118' font-family='Arial' font-size='23'>uma questão por opção</text>
+<line x1='540' y1='240' x2='710' y2='240' stroke='#375573' stroke-width='2'/>
+<text x='545' y='148' font-family='Arial' font-size='23'>0:N por papel</text>
+<line x1='1180' y1='240' x2='1350' y2='240' stroke='#375573' stroke-width='2'/>
+<text x='1190' y='218' font-family='Arial' font-size='23'>0:N contém</text>
+<line x1='300' y1='320' x2='300' y2='570' stroke='#375573' stroke-width='2'/>
+<text x='80' y='448' font-family='Arial' font-size='23'>0:N participa</text>
+<line x1='710' y1='290' x2='540' y2='570' stroke='#375573' stroke-width='2'/>
+<text x='510' y='438' font-family='Arial' font-size='23'>0:N convites</text>
+<line x1='540' y1='645' x2='710' y2='645' stroke='#375573' stroke-width='2'/>
+<text x='560' y='628' font-family='Arial' font-size='23'>0:1 ativo</text>
+<line x1='1580' y1='320' x2='1580' y2='570' stroke='#375573' stroke-width='2'/>
+<text x='1590' y='448' font-family='Arial' font-size='23'>0:N questões</text>
+<line x1='1580' y1='720' x2='1580' y2='1000' stroke='#375573' stroke-width='2'/>
+<text x='1590' y='863' font-family='Arial' font-size='23'>0:N opções</text>
+<line x1='540' y1='1075' x2='710' y2='1075' stroke='#375573' stroke-width='2'/>
+<text x='555' y='1053' font-family='Arial' font-size='23'>1:N itens</text>
+<line x1='1180' y1='1075' x2='1350' y2='1075' stroke='#375573' stroke-width='2'/>
+<text x='1190' y='1053' font-family='Arial' font-size='23'>0:N itens</text>
+<line x1='1350' y1='300' x2='1250' y2='375' stroke='#375573' stroke-width='2'/>
+<text x='1000' y='363' font-family='Arial' font-size='23'>0:N participações</text>
+<line x1='1250' y1='375' x2='400' y2='570' stroke='#375573' stroke-width='2'/>
+<text x='900' y='458' font-family='Arial' font-size='23'></text>
+<line x1='1820' y1='290' x2='1860' y2='290' stroke='#375573' stroke-width='2'/>
+<text x='0' y='28' font-family='Arial' font-size='23'></text>
+<line x1='1860' y1='290' x2='1860' y2='1250' stroke='#375573' stroke-width='2'/>
+<text x='1610' y='1218' font-family='Arial' font-size='23'>0:N respostas</text>
+<line x1='1860' y1='1250' x2='300' y2='1250' stroke='#375573' stroke-width='2'/>
+<text x='0' y='28' font-family='Arial' font-size='23'></text>
+<line x1='300' y1='1250' x2='300' y2='1150' stroke='#375573' stroke-width='2'/>
+<text x='0' y='28' font-family='Arial' font-size='23'></text>
+<text x='70' y='1358' font-family='Arial' font-size='34'>Não há vínculo entre identidade / token / participação e resposta anônima.</text>
+<text x='70' y='1418' font-family='Arial' font-size='23'>N:M usuário–pesquisa resolvido por PARTICIPACAO; resposta–opção por ITEM_RESPOSTA.</text>
+</svg>
