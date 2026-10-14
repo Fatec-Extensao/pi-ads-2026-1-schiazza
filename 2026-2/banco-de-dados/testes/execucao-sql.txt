@@ -1,0 +1,376 @@
+                                 version                                 |   current_database    |       current_timestamp
+-------------------------------------------------------------------------+-----------------------+-------------------------------
+ PostgreSQL 18.6 on x86_64-windows, compiled by msvc-19.44.35228, 64-bit | pi_bd_revisao_entrega | 2026-10-14 17:45:19.150723-03
+(1 row)
+
+BEGIN
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE FUNCTION
+CREATE TRIGGER
+CREATE FUNCTION
+CREATE TRIGGER
+CREATE TRIGGER
+CREATE TRIGGER
+CREATE FUNCTION
+CREATE TRIGGER
+CREATE FUNCTION
+CREATE TRIGGER
+CREATE FUNCTION
+COMMIT
+BEGIN
+INSERT 0 5
+INSERT 0 2
+INSERT 0 3
+INSERT 0 4
+INSERT 0 8
+INSERT 0 4
+INSERT 0 4
+ finalizar_questionario
+------------------------
+
+(1 row)
+
+ finalizar_questionario
+------------------------
+
+(1 row)
+
+ finalizar_questionario
+------------------------
+
+(1 row)
+
+ finalizar_questionario
+------------------------
+
+(1 row)
+
+ setval
+--------
+      5
+(1 row)
+
+ setval
+--------
+      2
+(1 row)
+
+COMMIT
+ id |         titulo          | convidados | participantes
+----+-------------------------+------------+---------------
+  1 | Avaliação institucional |          3 |             3
+  2 | Serviços do campus      |          1 |             1
+(2 rows)
+
+ id |         titulo          | respostas
+----+-------------------------+-----------
+  1 | Avaliação institucional |         3
+  2 | Serviços do campus      |         1
+(2 rows)
+
+ pesquisa_id |    nome    | respostas
+-------------+------------+-----------
+           1 | Estudantes |         2
+           1 | Servidores |         1
+           2 | Comunidade |         1
+(3 rows)
+
+         titulo          |    nome    |         enunciado          | descricao | votos
+-------------------------+------------+----------------------------+-----------+-------
+ Avaliação institucional | Estudantes | Como avalia o atendimento? | Bom       |     1
+ Avaliação institucional | Estudantes | Como avalia o atendimento? | Regular   |     1
+ Avaliação institucional | Estudantes | Como avalia a estrutura?   | Bom       |     0
+ Avaliação institucional | Estudantes | Como avalia a estrutura?   | Regular   |     2
+ Avaliação institucional | Servidores | Como avalia o suporte?     | Bom       |     1
+ Avaliação institucional | Servidores | Como avalia o suporte?     | Regular   |     0
+ Serviços do campus      | Comunidade | Como avalia os serviços?   | Bom       |     0
+ Serviços do campus      | Comunidade | Como avalia os serviços?   | Regular   |     1
+(8 rows)
+
+BEGIN
+CREATE FUNCTION
+CREATE FUNCTION
+ exige
+-------
+
+(1 row)
+
+ exige
+-------
+
+(1 row)
+
+ exige
+-------
+
+(1 row)
+
+ exige
+-------
+
+(1 row)
+
+ exige
+-------
+
+(1 row)
+
+ exige
+-------
+
+(1 row)
+
+ exige
+-------
+
+(1 row)
+
+ exige
+-------
+
+(1 row)
+
+ exige
+-------
+
+(1 row)
+
+ exige
+-------
+
+(1 row)
+
+ exige
+-------
+
+(1 row)
+
+ exige
+-------
+
+(1 row)
+
+ exige
+-------
+
+(1 row)
+
+ rejeita
+---------
+
+(1 row)
+
+ rejeita
+---------
+
+(1 row)
+
+ rejeita
+---------
+
+(1 row)
+
+ rejeita
+---------
+
+(1 row)
+
+ rejeita
+---------
+
+(1 row)
+
+ rejeita
+---------
+
+(1 row)
+
+ rejeita
+---------
+
+(1 row)
+
+ rejeita
+---------
+
+(1 row)
+
+ rejeita
+---------
+
+(1 row)
+
+ rejeita
+---------
+
+(1 row)
+
+ rejeita
+---------
+
+(1 row)
+
+ rejeita
+---------
+
+(1 row)
+
+ rejeita
+---------
+
+(1 row)
+
+ rejeita
+---------
+
+(1 row)
+
+ rejeita
+---------
+
+(1 row)
+
+INSERT 0 1
+INSERT 0 1
+ rejeita
+---------
+
+(1 row)
+
+ exige
+-------
+
+(1 row)
+
+DELETE 1
+DELETE 1
+ exige
+-------
+
+(1 row)
+
+INSERT 0 1
+INSERT 0 1
+ rejeita
+---------
+
+(1 row)
+
+ rejeita
+---------
+
+(1 row)
+
+ rejeita
+---------
+
+(1 row)
+
+ rejeita
+---------
+
+(1 row)
+
+ rejeita
+---------
+
+(1 row)
+
+ rejeita
+---------
+
+(1 row)
+
+ exige
+-------
+
+(1 row)
+
+ exige
+-------
+
+(1 row)
+
+ exige
+-------
+
+(1 row)
+
+ finalizar_questionario
+------------------------
+
+(1 row)
+
+ exige
+-------
+
+(1 row)
+
+ rejeita
+---------
+
+(1 row)
+
+ exige
+-------
+
+(1 row)
+
+INSERT 0 1
+INSERT 0 1
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+INSERT 0 1
+ rejeita
+---------
+
+(1 row)
+
+ finalizar_questionario
+------------------------
+
+(1 row)
+
+ exige
+-------
+
+(1 row)
+
+ exige
+-------
+
+(1 row)
+
+ exige
+-------
+
+(1 row)
+
+ exige
+-------
+
+(1 row)
+
+ exige
+-------
+
+(1 row)
+
+ exige
+-------
+
+(1 row)
+
+DROP TABLE
+ROLLBACK
+DO
+PASSOU: integridade, anonimato estrutural, participação única, rollback e token de uso único.
