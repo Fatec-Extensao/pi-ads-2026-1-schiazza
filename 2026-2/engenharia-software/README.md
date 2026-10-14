@@ -96,3 +96,11 @@ Os artefatos desta pasta deverão permanecer consistentes com:
 * as decisões tomadas durante o desenvolvimento do Projeto Integrador.
 
 Alterações significativas nos requisitos ou na estrutura do sistema deverão ser refletidas na documentação e nos respectivos diagramas.
+
+## Entregas para revisão — issues #2 e #3
+
+- [Levantamento de requisitos em Markdown](requisitos.md): atores, RF/RNF, regras, critérios de aceitação e casos de uso.
+- [Modelagem UML e especificação técnica](modelagem-uml/README.md): fontes editáveis e SVG de casos de uso, classes e sequência, com visual próximo ao Astah.
+- [Registro de validação e cobertura dos checklists](modelagem-uml/validacao.md).
+
+Aparência semelhante ao Astah não implica arquivo nativo `.asta`: as fontes são PlantUML e as exportações são SVG. O backend é previsto; apenas os artefatos SQL do PR #15 já existem. As decisões abertas estão registradas no levantamento, sem presumir validade de token, canal de entrega, limiar de grupos pequenos ou retenção.

@@ -1,0 +1,55 @@
+@startuml
+left to right direction
+skinparam shadowing false
+skinparam backgroundColor white
+skinparam defaultFontName Arial
+skinparam roundcorner 0
+skinparam ArrowColor Black
+skinparam classBackgroundColor #FFFFCC
+skinparam classBorderColor Black
+skinparam usecaseBackgroundColor White
+skinparam usecaseBorderColor Black
+skinparam actorBorderColor Black
+skinparam actorFontColor Black
+skinparam sequenceParticipantBackgroundColor #FFFFCC
+skinparam sequenceParticipantBorderColor Black
+skinparam sequenceLifeLineBorderColor Black
+title Pesquisas institucionais — objetivos previstos
+actor Administrador as A
+actor Respondente as R
+actor "Proprietário" as P
+rectangle "Sistema Web para Gestão de Pesquisas por Questionários" {
+ usecase "UC01 Criar pesquisa" as U1
+ usecase "UC02 Definir categorias" as U2
+ usecase "UC03 Compor questionário" as U3
+ usecase "UC04 Preparar acesso\n(credenciais e token)" as U4
+ usecase "UC05 Autenticar e\nvalidar acesso" as U5
+ usecase "UC06 Preencher questionário" as U6
+ usecase "UC07 Concluir questionário" as U7
+ usecase "UC08 Acompanhar\nparticipação agregada" as U8
+ usecase "UC09 Gerar relatório\nagregado" as U9
+ usecase "UC10 Encaminhar /\nreceber resultados" as U10
+}
+A -- U1
+A -- U2
+A -- U3
+A -- U4
+A -- U8
+A -- U9
+A -- U10
+R -- U5
+R -- U6
+R -- U7
+P -- U10
+U6 ..> U5 : <<include>>
+U7 ..> U5 : <<include>>
+U10 ..> U9 : <<include>>
+note bottom of U10
+ Canal e política de divulgação pendentes.
+ Não publicar grupos pequenos sem decisão.
+end note
+note bottom of U7
+ Finalização transacional existe no banco.
+ Interface, autenticação e serviço são previstos.
+end note
+@enduml
