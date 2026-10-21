@@ -132,7 +132,7 @@ Aplicação de conceitos relacionados à segurança da informação, privacidade
 ## Aplicação
 
 **Link da aplicação:**
-A ser disponibilizado durante o desenvolvimento do projeto.
+[Protótipo de Desenvolvimento Web](https://fatec-extensao.github.io/pi-ads-2026-1-schiazza/) — demonstração acadêmica com dados fictícios.
 
 ---
 
