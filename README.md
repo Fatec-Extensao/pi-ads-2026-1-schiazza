@@ -132,7 +132,7 @@ Aplicação de conceitos relacionados à segurança da informação, privacidade
 ## Aplicação
 
 **Link da aplicação:**
-[Protótipo de Desenvolvimento Web](https://fatec-extensao.github.io/pi-ads-2026-1-schiazza/) — demonstração acadêmica com dados fictícios.
+[Endereço previsto do protótipo — publicação pendente](https://fatec-extensao.github.io/pi-ads-2026-1-schiazza/) — demonstração acadêmica com dados fictícios.
 
 ---
 
@@ -156,3 +156,5 @@ Entre os principais critérios estão:
 * apresentação da solução;
 * participação dos integrantes;
 * domínio técnico individual.
+
+Publicação pendente: GitHub Actions bloqueado pela política da organização. [Código e instruções locais](./2026-2/desenvolvimento-web/README.md).
