@@ -1,67 +1,32 @@
-`2026-2/desenvolvimento-web/README.md`
-
 # Desenvolvimento Web
 
-**Disciplina:** Desenvolvimento Web
-**Professor:** Prof. Anderson Pazin
+**Professor:** Prof. Anderson Pazin. Entrega de front-end — 21/10/2026.
 
-## Objetivo
+Protótipo acadêmico integrado a partir de `desenvolvimentoweb.zip`, fornecido pelo usuário. Preserva as 12 páginas, o banner e a identidade visual recebidos; acrescenta JavaScript, validações, navegação por etapas e ajustes de acessibilidade e responsividade.
 
-Este diretório contém os artefatos relacionados ao desenvolvimento das interfaces web do sistema.
+**Aplicação:** [abrir demonstração publicada](https://fatec-extensao.github.io/pi-ads-2026-1-schiazza/). [Código inicial](./src/index.html).
 
-## Conteúdo Previsto
+## Entregas
 
-* código-fonte das páginas e interfaces;
-* arquivos HTML, CSS e JavaScript;
-* wireframes;
-* protótipos de interface;
-* recursos utilizados pela aplicação;
-* documentação relacionada ao desenvolvimento Front-End;
-* link da aplicação ou protótipo publicado.
+| Atividade | Evidência |
+|---|---|
+| Arquitetura e wireframes | [Sitemap e quatro SVG editáveis](./wireframes/sitemap.md) |
+| HTML e CSS | [12 páginas semânticas](./src/index.html), [CSS mobile-first](./src/css/style.css), textos alternativos, rótulos e foco visível |
+| JavaScript | [Validação e fluxos](./src/js/app.js): obrigatórios, formatos, datas, duplicidade na página, alternativas e seleção de perguntas |
+| Navegação de questionário | Quatro etapas, avanço/retorno, preservação temporária das escolhas e confirmação final |
+| Publicação | GitHub Pages, a partir da pasta `src` por workflow versionado |
+| Verificação | [Registro e instruções](./testes/README.md), [resultados automatizados](./testes/evidencias/resultado.json) |
 
-## Estrutura Sugerida
+Issues relacionadas: [#7](https://github.com/Fatec-Extensao/pi-ads-2026-1-schiazza/issues/7), [#8](https://github.com/Fatec-Extensao/pi-ads-2026-1-schiazza/issues/8), [#9](https://github.com/Fatec-Extensao/pi-ads-2026-1-schiazza/issues/9), [#10](https://github.com/Fatec-Extensao/pi-ads-2026-1-schiazza/issues/10).
 
-```text
-desenvolvimento-web/
-├── src/
-├── wireframes/
-└── README.md
-```
+## Executar e testar
 
----
+Abra `src/index.html` ou sirva `src/` com um servidor estático. Não é necessário compilar o site nem instalar dependências para usá-lo. Para testar: consulte [testes](./testes/README.md).
 
-`2026-2/engenharia-software/README.md`
+## Limites da entrega
 
-## Engenharia de Software II
+Os formulários validam e simulam ações no navegador. Não há autenticação real, banco, API, envio ou armazenamento de dados. O código fictício `DEMO-2026` serve apenas para percorrer o questionário. Login com formato válido abre o painel, que também é acessível pela navegação. Geração de códigos e cadastros não têm validade fora da página. Relatórios e monitoramento usam exemplos fictícios fixos, não respostas coletadas.
 
-**Disciplina:** Engenharia de Software II
-**Professor:** Prof. Rafael Hamamura
+Credenciais não são enviadas por GET, não aparecem na URL e não são guardadas em localStorage, sessionStorage ou cookies. Sem JavaScript, os formulários ficam desativados. A identidade visual recebida foi preservada; o CSS foi reorganizado para partir das telas menores.
 
-### Objetivo
-
-Este diretório concentra a documentação referente à análise, especificação e modelagem do sistema.
-
-### Conteúdo Previsto
-
-* levantamento de requisitos;
-* requisitos funcionais;
-* requisitos não funcionais;
-* regras de negócio;
-* diagramas UML;
-* documentação técnica de modelagem.
-
-### Estrutura Sugerida
-
-```text
-engenharia-software/
-├── requisitos.md
-├── modelagem-uml/
-└── README.md
-```
-
-A pasta `modelagem-uml` poderá conter, entre outros:
-
-* Diagrama de Casos de Uso;
-* Diagrama de Classes;
-* Diagrama de Sequência;
-* demais diagramas definidos durante o desenvolvimento do projeto.
+A integração com banco e regras de anonimato exige backend, autorização, transações e revisão de segurança. O formulário aberto e as alternativas do ZIP são demonstrações de interface; não modificam o escopo do modelo de dados de cada projeto. A conclusão técnica desta disciplina não representa conclusão do PI nem aprovação acadêmica.
