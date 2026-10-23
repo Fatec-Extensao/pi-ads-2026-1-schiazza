@@ -4,7 +4,7 @@
 
 Protótipo acadêmico integrado a partir de `desenvolvimentoweb.zip`, fornecido pelo usuário. Preserva as 12 páginas, o banner e a identidade visual recebidos; acrescenta JavaScript, validações, navegação por etapas e ajustes de acessibilidade e responsividade.
 
-**Publicação pendente de liberação pelo administrador da organização.** Endereço previsto: [GitHub Pages](https://fatec-extensao.github.io/pi-ads-2026-1-schiazza/). [Código inicial](./src/index.html).
+**Aplicação publicada e verificada em 23/10/2026:** [GitHub Pages](https://fatec-extensao.github.io/pi-ads-2026-1-schiazza/). [Código inicial](./src/index.html).
 
 ## Entregas
 
@@ -14,7 +14,7 @@ Protótipo acadêmico integrado a partir de `desenvolvimentoweb.zip`, fornecido 
 | HTML e CSS | [12 páginas semânticas](./src/index.html), [CSS mobile-first](./src/css/style.css), textos alternativos, rótulos e foco visível |
 | JavaScript | [Validação e fluxos](./src/js/app.js): obrigatórios, formatos, datas, duplicidade na página, alternativas e seleção de perguntas |
 | Navegação de questionário | Quatro etapas, avanço/retorno, preservação temporária das escolhas e confirmação final |
-| Publicação | GitHub Pages, a partir da pasta `src` por workflow versionado |
+| Publicação | GitHub Pages nativo, com conteúdo de `src` na branch `gh-pages` |
 | Verificação | [Registro e instruções](./testes/README.md), [resultados automatizados](./testes/evidencias/resultado.json) |
 
 Issues relacionadas: [#7](https://github.com/Fatec-Extensao/pi-ads-2026-1-schiazza/issues/7), [#8](https://github.com/Fatec-Extensao/pi-ads-2026-1-schiazza/issues/8), [#9](https://github.com/Fatec-Extensao/pi-ads-2026-1-schiazza/issues/9), [#10](https://github.com/Fatec-Extensao/pi-ads-2026-1-schiazza/issues/10).
@@ -33,6 +33,8 @@ A integração com banco e regras de anonimato exige backend, autorização, tra
 
 ## Situação da publicação
 
-O código foi integrado e os fluxos locais foram testados. Em 21/10/2026, os dois endereços do GitHub Pages retornaram HTTP 404: a organização Fatec-Extensao mantém GitHub Actions desativado para estes repositórios. A tentativa de habilitar no repositório retornou HTTP 409; a conta principal é membro, sem permissão administrativa sobre a organização. Nenhuma política da organização foi alterada.
+Publicado em https://fatec-extensao.github.io/pi-ads-2026-1-schiazza/ pelo modo nativo do GitHub Pages. A configuração anterior por workflow foi substituída pela publicação da branch gh-pages. O endereço retornou HTTP 200 e a suíte de navegador passou nas 12 páginas em 360 e 1280 px, incluindo recursos estáticos, navegação e formulários demonstrativos.
 
-O administrador deve liberar GitHub Actions para este repositório. Depois, deve-se iniciar a publicação e testar a URL e os recursos públicos antes de concluir a issue de deploy. O front-end pode ser aberto localmente por src/index.html enquanto isso.
+[Resultados públicos](./testes/evidencias-publicas/resultado.json) · [Registro da publicação](./testes/evidencias/publicacao.json).
+
+GitHub Actions permanece desativado na organização; a publicação nativa foi verificada sem alterar essa política. Para atualizar o site, valide as fontes, execute git subtree split --prefix=2026-2/desenvolvimento-web/src na raiz e publique o SHA retornado na branch gh-pages. Não envie credenciais nem outros diretórios para essa branch.
