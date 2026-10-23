@@ -6,7 +6,7 @@ const assert = require('node:assert/strict');
 
 const base = path.resolve(__dirname, '..');
 const root = path.join(base, 'src');
-const evidence = path.join(__dirname, 'evidencias');
+const evidence = path.join(__dirname, process.env.WEB_TEST_BASE_URL ? 'evidencias-publicas' : 'evidencias');
 fs.mkdirSync(evidence, {recursive: true});
 const results = [];
 const server = http.createServer((req, res) => {
@@ -22,7 +22,7 @@ const server = http.createServer((req, res) => {
 
 (async () => {
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
-  const url = `http://127.0.0.1:${server.address().port}`;
+  const url = process.env.WEB_TEST_BASE_URL || `http://127.0.0.1:${server.address().port}`;
   const browser = await chromium.launch({headless: true, ...(process.env.WEB_BROWSER_EXECUTABLE ? {executablePath: process.env.WEB_BROWSER_EXECUTABLE} : {})});
   try {
     const context = await browser.newContext();
