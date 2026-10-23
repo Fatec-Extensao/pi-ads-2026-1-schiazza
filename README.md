@@ -1,5 +1,9 @@
 # Projeto Integrador com Atividades de Curricularização da Extensão
 
+**Aplicação publicada:** [Protótipo acadêmico](https://fatec-extensao.github.io/pi-ads-2026-1-schiazza/)
+
+[Conteúdo de cada issue](./2026-2/entrega-final/conteudo-das-issues.md) · [Apresentação](./2026-2/entrega-final/apresentacao.md)
+
 **2º Semestre de 2026 — 2º Termo de Análise e Desenvolvimento de Sistemas**
 **Faculdade de Tecnologia de Lins — FATEC Lins**
 
@@ -132,7 +136,7 @@ Aplicação de conceitos relacionados à segurança da informação, privacidade
 ## Aplicação
 
 **Link da aplicação:**
-[Endereço previsto do protótipo — publicação pendente](https://fatec-extensao.github.io/pi-ads-2026-1-schiazza/) — demonstração acadêmica com dados fictícios.
+[Protótipo publicado](https://fatec-extensao.github.io/pi-ads-2026-1-schiazza/) — demonstração acadêmica com dados fictícios.
 
 ---
 
@@ -156,5 +160,3 @@ Entre os principais critérios estão:
 * apresentação da solução;
 * participação dos integrantes;
 * domínio técnico individual.
-
-Publicação pendente: GitHub Actions bloqueado pela política da organização. [Código e instruções locais](./2026-2/desenvolvimento-web/README.md).

@@ -1,9 +1,10 @@
 {
-  "date": "2026-10-21",
+  "date": "2026-10-23",
   "url": "https://fatec-extensao.github.io/pi-ads-2026-1-schiazza/",
-  "http_status": 404,
-  "status": "blocked_by_organization_actions_policy",
-  "repository_enable_attempt": 409,
-  "organization_admin": false,
-  "next_step": "Administrador da organização deve liberar Actions neste repositório; executar deploy e verificar site antes de encerrar a issue de publicação."
+  "http_status": 200,
+  "status": "published_and_verified",
+  "source_branch": "gh-pages",
+  "source_commit": "22a42d14b65f19177e7017f3797982502763a45f",
+  "public_browser_suite": "passed",
+  "organization_policy_changed": false
 }
