@@ -9,6 +9,12 @@
 
 ---
 
+## Acervo por semestre
+
+- [2026-1 — cópia dos trabalhos do Sistema-Integrador](./2026-1/README.md).
+- [Origem e integridade da cópia de 2026-1](./2026-1/ORIGEM.md).
+- [2026-2 — entregas do Projeto Integrador](./2026-2/README.md).
+
 ## Informações do Curso
 
 **Curso:** Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas
