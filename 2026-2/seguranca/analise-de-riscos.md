@@ -1,6 +1,9 @@
 # Análise de riscos e ameaças web
 
-- **Projeto:** Sistema Web para Gestão de Pesquisas por Questionários`n- **Escopo:** protótipo acadêmico documentado em `2026-2``n- **Issue:** [#11 — Análise de Riscos Básica e Ameaças Web](https://github.com/Fatec-Extensao/pi-ads-2026-1-schiazza/issues/11)`n- **Revisão:** 6 de novembro de 2026
+- **Projeto:** Sistema Web para Gestão de Pesquisas por Questionários
+- **Escopo:** protótipo acadêmico documentado em `2026-2`
+- **Issue:** [#11 — Análise de Riscos Básica e Ameaças Web](https://github.com/Fatec-Extensao/pi-ads-2026-1-schiazza/issues/11)
+- **Revisão:** 6 de novembro de 2026
 
 ## 1. Objetivo e limites
 
