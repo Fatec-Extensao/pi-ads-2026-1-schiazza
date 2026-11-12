@@ -42,7 +42,11 @@ for (const form of document.forms) {
     if (!validate(form)) return;
     if (page === 'login.html') {
       for (const field of form.querySelectorAll('input[type="password"]')) field.value = '';
-      location.assign('main.html');
+      if (form.id === 'login-form') {
+        location.assign('main.html');
+      } else {
+        feedback(form, 'Demonstração de cadastro validada. Nenhuma conta foi criada ou armazenada.');
+      }
       return;
     }
     if (page === 'pesquisa.html') {
